@@ -2,6 +2,7 @@
 
 # Visual Studio Code
 .vscode/
+test/
 
 # JetBrains IDEs (IntelliJ, PyCharm, WebStorm, etc.)
 .idea/
