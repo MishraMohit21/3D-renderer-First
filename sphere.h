@@ -14,7 +14,7 @@ public:
         vec3 oc = center - r.get_origin();
         auto a = r.get_direction().length_squared();
         auto h = dot(r.get_direction(), oc);
-        auto c = oc.length_squared() - radius*radius;
+        auto c = (oc.length_squared() - radius*radius);
 
         auto discriminant = h*h - a*c;
         if (discriminant < 0)

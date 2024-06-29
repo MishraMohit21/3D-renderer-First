@@ -26,7 +26,7 @@ class hittable_list : public hittable {
 
         for (const auto& object : objects) {
             if (object->hit(r, interval(ray_t.min, closest_so_far), temp_rec)) {
-                std::cerr << "OK yeh chal raha hai\n";
+              //  std::cerr << "OK yeh chal raha hai\n";
                 hit_anything = true;
                 closest_so_far = temp_rec.t;
                 rec = temp_rec;
