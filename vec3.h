@@ -43,7 +43,7 @@ class vec3 {
     }
 
     bool near_zero() const {
-        // Return true if the vector is close to zero in all dimensions.
+        
         auto s = 1e-8;
         return (fabs(e[0]) < s) && (fabs(e[1]) < s) && (fabs(e[2]) < s);
     }
@@ -57,11 +57,11 @@ class vec3 {
     }
 };
 
-// point3 is just an alias for vec3, but useful for geometric clarity in the code.
+
 using point3 = vec3;
 
 
-// Vector Utility Functions
+
 
 inline std::ostream& operator<<(std::ostream& out, const vec3& v) {
     return out << v.e[0] << ' ' << v.e[1] << ' ' << v.e[2];
@@ -129,7 +129,7 @@ inline vec3 random_unit_vector() {
 
 inline vec3 random_on_hemisphere(const vec3& normal) {
     vec3 on_unit_sphere = random_unit_vector();
-    if (dot(on_unit_sphere, normal) > 0.0) // In the same hemisphere as the normal
+    if (dot(on_unit_sphere, normal) > 0.0) 
         return on_unit_sphere;
     else
         return -on_unit_sphere;
