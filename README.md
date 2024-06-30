@@ -48,7 +48,7 @@ Running the executable is a tricky part here as I haven't used file I/O thus we 
     ./main >> image.ppm
     ```
 
-You should see a window displaying the rendered 3D objects.
+Your image should be created and the shaped and stuff would be rendered in it
 
 
 ## License
