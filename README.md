@@ -38,9 +38,14 @@ After successfully building the project, you can run the executable to see the 3
 
 ### Running the Renderer
 
+Running the executable is a tricky part here as I haven't used file I/O thus we will redirect the output stream into the file using " << " operator like this 
+```bash
+    >> image.ppm
+```
+
 1. Run the executable:
     ```bash
-    ./main
+    ./main >> image.ppm
     ```
 
 You should see a window displaying the rendered 3D objects.
