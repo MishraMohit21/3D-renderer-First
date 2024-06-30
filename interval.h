@@ -1,26 +1,38 @@
-#pragma once
+#ifndef INTERVAL_H
+#define INTERVAL_H
 
-#include <limits>
-const double infinity = std::numeric_limits<double>::infinity();
 
 class interval {
+  public:
+    double min, max;
 
-    public:
+    interval() : min(+infinity), max(-infinity) {} // Default interval is empty
 
-        double min, max;
+    interval(double min, double max) : min(min), max(max) {}
 
-        interval() : min(+infinity), max (-infinity) {}
+    double size() const {
+        return max - min;
+    }
 
-        interval (double min, double max) : min (min), max (max) {}
+    bool contains(double x) const {
+        return min <= x && x <= max;
+    }
 
-        inline double size () { return min - max; }
+    bool surrounds(double x) const {
+        return min < x && x < max;
+    }
 
-        inline bool contains(double x) const { return  (min <= x && x <= max); }
+    double clamp(double x) const {
+        if (x < min) return min;
+        if (x > max) return max;
+        return x;
+    }
 
-        inline bool surrounds(double x) const { return  (min < x && x < max); }
-
-        static const interval empty, universe;
+    static const interval empty, universe;
 };
 
-const interval interval::empty = interval(+infinity, -infinity);
-const interval interval::universe = interval (-infinity, +infinity);
+const interval interval::empty    = interval(+infinity, -infinity);
+const interval interval::universe = interval(-infinity, +infinity);
+
+
+#endif

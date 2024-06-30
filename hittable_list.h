@@ -1,10 +1,13 @@
 #ifndef HITTABLE_LIST_H
 #define HITTABLE_LIST_H
 
-#include "include.h"
+
+#include "rtweekend.h"
+
 #include "hittable.h"
 
 #include <vector>
+
 
 class hittable_list : public hittable {
   public:
@@ -26,7 +29,6 @@ class hittable_list : public hittable {
 
         for (const auto& object : objects) {
             if (object->hit(r, interval(ray_t.min, closest_so_far), temp_rec)) {
-              //  std::cerr << "OK yeh chal raha hai\n";
                 hit_anything = true;
                 closest_so_far = temp_rec.t;
                 rec = temp_rec;
