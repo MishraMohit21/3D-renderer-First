@@ -2,7 +2,7 @@
 #define MATERIAL_H
 
 
-#include "rtweekend.h"
+#include "header.h"
 
 class hit_record;
 

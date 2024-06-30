@@ -2,7 +2,7 @@
 #define HITTABLE_LIST_H
 
 
-#include "rtweekend.h"
+#include "header.h"
 
 #include "hittable.h"
 

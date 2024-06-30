@@ -1,4 +1,4 @@
-#include "rtweekend.h"
+#include "header.h"
 
 #include "camera.h"
 #include "hittable.h"
@@ -10,10 +10,10 @@
 int main() {
     hittable_list world;
 
-    auto ground_material = make_shared<lambertian>(color(0.5, 0.5, 0.5));
+    auto ground_material = make_shared<lambertian>(color(0.8, 0.8, 0.8));
     world.add(make_shared<sphere>(point3(0,-1000,0), 1000, ground_material));
 
-    for (int a = -5; a < 5; a++) {
+    for (int a = -2; a < 20; a++) {
         for (int b = -5; b < 5; b++) {
             auto choose_mat = random_double();
             point3 center(a + 0.9*random_double(), 0.2, b + 0.9*random_double());
@@ -53,7 +53,7 @@ int main() {
     camera cam;
 
     cam.aspect_ratio      = 16.0 / 9.0;
-    cam.image_width       = 3000;
+    cam.image_width       = 5000;
     cam.samples_per_pixel = 10;
     cam.max_depth         = 20;
 

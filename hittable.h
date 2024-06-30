@@ -2,7 +2,7 @@
 #define HITTABLE_H
 
 
-#include "rtweekend.h"
+#include "header.h"
 
 class material;
 
